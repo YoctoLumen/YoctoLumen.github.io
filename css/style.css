@@ -1,0 +1,104 @@
+/* ===========================
+   VARIABLES & BASE
+=========================== */
+:root {
+  --sidebar-width: 220px;
+  --orange: #FF7900;
+  --transition: 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+#sidebar {
+  width: var(--sidebar-width);
+  transition: transform var(--transition);
+}
+
+#sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.sidebar-link {
+  color: #adb5bd;
+  padding: 0.85rem 1.5rem;
+  border-left: 3px solid transparent;
+  transition: all var(--transition);
+  font-size: 0.95rem;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  color: #FF7900;
+  border-left-color: #FF7900;
+  background-color: rgba(255, 121, 0, 0.08);
+}
+
+/* ===========================
+   CONTENU PRINCIPAL
+=========================== */
+.main-content {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  transition: margin-left var(--transition);
+}
+
+/* ===========================
+   RESPONSIVE MOBILE
+=========================== */
+@media (max-width: 767.98px) {
+  #sidebar {
+    transform: translateX(-100%);
+  }
+
+  #sidebar.show {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-content > div {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ===========================
+   SCROLLBAR CUSTOM
+=========================== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF7900;
+  border-radius: 3px;
+}
