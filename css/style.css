@@ -107,7 +107,7 @@ body {
    BACKGROUND IMAGE
 =========================== */
 body {
-  background-image: url('../img/background.jpg');
+  background-image: url('../images/background.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
