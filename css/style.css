@@ -102,3 +102,33 @@ body {
   background: #FF7900;
   border-radius: 3px;
 }
+
+/* ===========================
+   BACKGROUND IMAGE
+=========================== */
+body {
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Overlay sombre pour lisibilité du texte */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.60); /* Ajustez l'opacité selon votre image */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* S'assurer que le contenu passe au-dessus de l'overlay */
+#sidebar,
+.main-content,
+#sidebarToggle {
+  position: relative;
+  z-index: 1;
+}
