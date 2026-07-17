@@ -2063,6 +2063,21 @@ input, select, textarea {
 				width: 1em;
 			}
 
+				ul.featured-icons li .icon i[class^="devicon-"] {
+				    font-size: 5.5em;
+				    display: block;
+				    line-height: 1.5em;
+				    width: 1em;
+				    margin: 0 auto;
+				}
+
+					ul.featured-icons li .icon img {
+					    width: 5.5em;
+					    height: 5.5em;
+					    display: block;
+					    margin: 0 auto;
+					    line-height: 1.5em;
+					}
 /* Buttons */
 
 	ul.buttons {
